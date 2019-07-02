@@ -1,35 +1,35 @@
 import React, { Component } from "react";
-import shortid from 'shortid';
+import shortid from "shortid";
 
 export default class TodoForm extends Component {
   state = {
-    text: '',
+    text: ""
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit({
       id: shortid.generate(),
       text: this.state.text,
-      done: false,
+      done: false
     });
     this.setState({
-      text: "",
-    })
-  }
+      text: ""
+    });
+  };
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <input
           name="text"
-          placeholder="Todo..." 
+          placeholder="Todo..."
           value={this.state.text}
           onChange={this.handleChange}
         />
