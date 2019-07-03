@@ -5,20 +5,20 @@ import Todo from "./Todo";
 export default class TodoList extends Component {
   state = {
     todos: [],
-    todoToShow: "all"
+    todoToShow: "all",
+    toggleAllDone: true
   };
 
   addTodo = todo => {
-    this.setState({
-      todos: [todo, ...this.state.todos]
-    });
+    this.setState(state => ({
+      todos: [todo, ...state.todos]
+    }));
   };
 
   toggleDone = id => {
-    this.setState({
-      todos: this.state.todos.map(todo => {
+    this.setState(state => ({
+      todos: state.todos.map(todo => {
         if (todo.id === id) {
-          // suppose to update
           return {
             ...todo,
             done: !todo.done
@@ -27,7 +27,7 @@ export default class TodoList extends Component {
           return todo;
         }
       })
-    });
+    }));
   };
 
   updateTodoToShow = input => {
@@ -37,15 +37,15 @@ export default class TodoList extends Component {
   };
 
   handleDeleteTodo = id => {
-    this.setState({
-      todos: this.state.todos.filter(todo => todo.id !== id)
-    });
+    this.setState(state => ({
+      todos: state.todos.filter(todo => todo.id !== id)
+    }));
   };
 
   removeAllDoneTodo = () => {
-    this.setState({
-      todos: this.state.todos.filter(todo => !todo.done)
-    });
+    this.setState(state => ({
+      todos: state.todos.filter(todo => !todo.done)
+    }));
   };
 
   render() {
@@ -87,6 +87,21 @@ export default class TodoList extends Component {
             </button>
           </div>
         ) : null}
+        <div>
+          <button
+            onClick={() =>
+              this.setState(state => ({
+                todos: state.todos.map(todo => ({
+                  ...todo,
+                  done: state.toggleAllDone
+                })),
+                toggleAllDone: state.toggleAllDone
+              }))
+            }
+          >
+            Toggle All Done: {`${this.state.toggleAllDone}`}
+          </button>
+        </div>
       </div>
     );
   }
