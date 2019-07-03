@@ -36,6 +36,12 @@ export default class TodoList extends Component {
     });
   };
 
+  handleDeleteTodo = id => {
+    this.setState({
+      todos: this.state.todos.filter(todo => todo.id !== id)
+    });
+  };
+
   render() {
     let todos = [];
 
@@ -55,6 +61,7 @@ export default class TodoList extends Component {
             key={todo.id}
             toggleDone={() => this.toggleDone(todo.id)}
             todo={todo}
+            onDelete={() => this.handleDeleteTodo(todo.id)}
           />
         ))}
         <div>
