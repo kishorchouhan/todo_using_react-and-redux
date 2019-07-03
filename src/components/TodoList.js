@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./TodoList.css";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 
@@ -60,7 +61,8 @@ export default class TodoList extends Component {
     }
 
     return (
-      <div>
+      <div className="todoList">
+        <h1>TODOS</h1>
         <TodoForm onSubmit={this.addTodo} />
         {todos.map(todo => (
           <Todo
@@ -95,7 +97,7 @@ export default class TodoList extends Component {
                   ...todo,
                   done: state.toggleAllDone
                 })),
-                toggleAllDone: state.toggleAllDone
+                toggleAllDone: !state.toggleAllDone
               }))
             }
           >

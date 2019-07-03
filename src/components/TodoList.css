@@ -1,0 +1,7 @@
+.todoList {
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 75%;
+  padding: 30px;
+  margin: 20px;
+}
