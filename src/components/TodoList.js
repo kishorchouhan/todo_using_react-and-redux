@@ -40,6 +40,7 @@ export default class TodoList extends Component {
             todo={todo}
           />
         ))}
+        <div>Todo Left: {this.state.todos.filter(todo => !todo.done).length}</div>
       </div>
     );
   }
