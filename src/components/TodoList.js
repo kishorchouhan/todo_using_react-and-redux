@@ -4,7 +4,8 @@ import Todo from "./Todo";
 
 export default class TodoList extends Component {
   state = {
-    todos: []
+    todos: [],
+    todoToShow: "all"
   };
 
   addTodo = todo => {
@@ -29,18 +30,43 @@ export default class TodoList extends Component {
     });
   };
 
+  updateTodoToShow = input => {
+    this.setState({
+      todoToShow: input
+    });
+  };
+
   render() {
+    let todos = [];
+
+    if (this.state.todoToShow === "all") {
+      todos = this.state.todos;
+    } else if (this.state.todoToShow === "active") {
+      todos = this.state.todos.filter(todo => !todo.done);
+    } else if (this.state.todoToShow === "done") {
+      todos = this.state.todos.filter(todo => todo.done);
+    }
+
     return (
       <div>
         <TodoForm onSubmit={this.addTodo} />
-        {this.state.todos.map(todo => (
+        {todos.map(todo => (
           <Todo
             key={todo.id}
             toggleDone={() => this.toggleDone(todo.id)}
             todo={todo}
           />
         ))}
-        <div>Todo Left: {this.state.todos.filter(todo => !todo.done).length}</div>
+        <div>
+          Todo Left: {this.state.todos.filter(todo => !todo.done).length}
+        </div>
+        <div>
+          <button onClick={() => this.updateTodoToShow("all")}>All</button>
+          <button onClick={() => this.updateTodoToShow("active")}>
+            Active
+          </button>
+          <button onClick={() => this.updateTodoToShow("done")}>Done</button>
+        </div>
       </div>
     );
   }
