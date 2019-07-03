@@ -42,6 +42,12 @@ export default class TodoList extends Component {
     });
   };
 
+  removeAllDoneTodo = () => {
+    this.setState({
+      todos: this.state.todos.filter(todo => !todo.done)
+    });
+  };
+
   render() {
     let todos = [];
 
@@ -74,6 +80,13 @@ export default class TodoList extends Component {
           </button>
           <button onClick={() => this.updateTodoToShow("done")}>Done</button>
         </div>
+        {this.state.todos.some(todo => todo.done) ? (
+          <div>
+            <button onClick={this.removeAllDoneTodo}>
+              Remove All Done Todo
+            </button>
+          </div>
+        ) : null}
       </div>
     );
   }
