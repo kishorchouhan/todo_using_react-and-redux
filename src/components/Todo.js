@@ -10,6 +10,12 @@ export default props => (
     >
       {props.todo.text}
     </div>
-    <button onClick={props.onDelete}>x</button>
+    <i
+      className="material-icons"
+      style={{ color: "red", cursor: "default" }}
+      onClick={props.onDelete}
+    >
+      delete
+    </i>
   </div>
 );
