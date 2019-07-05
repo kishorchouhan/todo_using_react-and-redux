@@ -100,9 +100,12 @@ export default class TodoList extends Component {
           </div>
         </div>
         {this.state.todos.some(todo => todo.done) ? (
-          <div className="remove-all-done-btn">
-            <button onClick={this.removeAllDoneTodo}>
-              Remove All Done Todo
+          <div>
+            <button
+              className="remove-all-done-btn"
+              onClick={this.removeAllDoneTodo}
+            >
+              <i className="fa fa-trash" />Remove All Completed Todo
             </button>
           </div>
         ) : null}

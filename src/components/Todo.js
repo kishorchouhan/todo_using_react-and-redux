@@ -12,8 +12,6 @@ export default props => (
     >
       {props.todo.text}
     </div>
-    <i className={`material-icons todo-delete-icon`} onClick={props.onDelete}>
-      delete
-    </i>
+    <i className="fa fa-trash todo-delete-icon" onClick={props.onDelete} />
   </div>
 );

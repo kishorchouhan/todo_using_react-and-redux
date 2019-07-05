@@ -11,10 +11,12 @@
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: grey;
+  text-align: left;
 }
 
 .todo-delete-icon {
   color: red;
   padding: 4px;
+  font-size: 25px;
   cursor: pointer;
 }
