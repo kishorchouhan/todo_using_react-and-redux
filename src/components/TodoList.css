@@ -6,3 +6,9 @@
   margin: 20px;
   align-items: center;
 }
+
+.todoList h1 {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}

@@ -1,8 +1,10 @@
 import React from "react";
+import "./Todo.css";
 
 export default props => (
-  <div style={{ display: "flex", justifyContent: "center" }}>
+  <div className="todo" style={{ display: "flex", justifyContent: "center" }}>
     <div
+      className="todo-text"
       style={{
         textDecoration: props.todo.done ? "line-through" : ""
       }}

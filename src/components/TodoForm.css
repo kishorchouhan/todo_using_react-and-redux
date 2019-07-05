@@ -1,0 +1,23 @@
+.input-field {
+  width: 70%;
+  margin: 8px 0;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-todo-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  width: 20%;
+  margin: 8px 0px 8px 5px;
+  cursor: pointer;
+}

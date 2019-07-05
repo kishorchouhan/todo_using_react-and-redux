@@ -5,7 +5,7 @@ import TodoList from "./components/TodoList";
 export default class App extends Component {
   render() {
     return (
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className="app">
         <TodoList />
       </div>
     );

@@ -1,0 +1,13 @@
+.todo {
+  width: 100%;
+}
+
+.todo-text {
+  word-break: break-all;
+  padding: 10px 15px 12px 12px;
+  display: block;
+  line-height: 1.2;
+  transition: color 0.4s;
+}
+
+.todo-delete-icon {}

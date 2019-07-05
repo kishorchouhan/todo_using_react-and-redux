@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import shortid from "shortid";
+import "./TodoForm.css";
 
 export default class TodoForm extends Component {
   state = {
@@ -30,12 +31,13 @@ export default class TodoForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input
+          className="input-field"
           name="text"
-          placeholder="Todo..."
+          placeholder="What needs to be done?"
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleSubmit}>Add Todo</button>
+        <button className="add-todo-button" onClick={this.handleSubmit}>Add Todo</button>
       </form>
     );
   }
