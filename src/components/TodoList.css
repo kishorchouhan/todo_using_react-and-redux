@@ -13,30 +13,21 @@
   color: black;
 }
 
-.remove-all-done-btn {
-  background-color: DodgerBlue;
-  border: none;
-  color: white;
-  padding: 12px 16px;
-  font-size: 16px;
-  cursor: pointer;
-}
-/*
-.footer {}
+/* .footer {
+} */
 
 .delete-icon {
   padding: 4px;
-  font-size: default;
+  font-size: 1.4em;
 }
 
 .remove-all-done-btn {
   background-color: red;
-  color: white;
   border: none;
   border-radius: 4px;
-  padding: 4px;
+  color: white;
+  padding: 8px;
+  margin: 4px;
   font-size: default;
-  margin: 8px;
-  text-align: start;
   cursor: pointer;
-}*/
+}

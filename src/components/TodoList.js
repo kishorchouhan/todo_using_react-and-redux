@@ -105,7 +105,8 @@ export default class TodoList extends Component {
               className="remove-all-done-btn"
               onClick={this.removeAllDoneTodo}
             >
-              <i className="fa fa-trash" />Remove All Completed Todo
+              <i className="fa fa-trash delete-icon" />
+              Remove All Completed Todo
             </button>
           </div>
         ) : null}
