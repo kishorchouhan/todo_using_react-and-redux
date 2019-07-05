@@ -1,13 +1,20 @@
 .todo {
-  width: 100%;
+  margin: 4px 0;
 }
 
 .todo-text {
   word-break: break-all;
-  padding: 10px 15px 12px 12px;
-  display: block;
   line-height: 1.2;
-  transition: color 0.4s;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 7px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: grey;
 }
 
-.todo-delete-icon {}
+.todo-delete-icon {
+  color: red;
+  padding: 4px;
+  cursor: pointer;
+}

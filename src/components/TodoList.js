@@ -61,7 +61,7 @@ export default class TodoList extends Component {
     }
 
     return (
-      <div className="todoList">
+      <div className="todo-list">
         <h1>TODOS</h1>
         <TodoForm onSubmit={this.addTodo} />
         {todos.map(todo => (
@@ -72,38 +72,40 @@ export default class TodoList extends Component {
             onDelete={() => this.handleDeleteTodo(todo.id)}
           />
         ))}
-        <div>
-          Todo Left: {this.state.todos.filter(todo => !todo.done).length}
-        </div>
-        <div>
-          <button onClick={() => this.updateTodoToShow("all")}>All</button>
-          <button onClick={() => this.updateTodoToShow("active")}>
-            Active
-          </button>
-          <button onClick={() => this.updateTodoToShow("done")}>Done</button>
+        <div className="footer">
+          <div>
+            Todo Left: {this.state.todos.filter(todo => !todo.done).length}
+          </div>
+          <div>
+            <button onClick={() => this.updateTodoToShow("all")}>All</button>
+            <button onClick={() => this.updateTodoToShow("active")}>
+              Active
+            </button>
+            <button onClick={() => this.updateTodoToShow("done")}>Done</button>
+          </div>
+          <div>
+            <button
+              onClick={() =>
+                this.setState(state => ({
+                  todos: state.todos.map(todo => ({
+                    ...todo,
+                    done: state.toggleAllDone
+                  })),
+                  toggleAllDone: !state.toggleAllDone
+                }))
+              }
+            >
+              Toggle All Done: {`${this.state.toggleAllDone}`}
+            </button>
+          </div>
         </div>
         {this.state.todos.some(todo => todo.done) ? (
-          <div>
+          <div className="remove-all-done-btn">
             <button onClick={this.removeAllDoneTodo}>
               Remove All Done Todo
             </button>
           </div>
         ) : null}
-        <div>
-          <button
-            onClick={() =>
-              this.setState(state => ({
-                todos: state.todos.map(todo => ({
-                  ...todo,
-                  done: state.toggleAllDone
-                })),
-                toggleAllDone: !state.toggleAllDone
-              }))
-            }
-          >
-            Toggle All Done: {`${this.state.toggleAllDone}`}
-          </button>
-        </div>
       </div>
     );
   }

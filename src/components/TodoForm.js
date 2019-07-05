@@ -37,7 +37,9 @@ export default class TodoForm extends Component {
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <button className="add-todo-button" onClick={this.handleSubmit}>Add Todo</button>
+        <button className="add-todo-button" onClick={this.handleSubmit}>
+          Add Todo
+        </button>
       </form>
     );
   }

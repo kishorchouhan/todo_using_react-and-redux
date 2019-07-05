@@ -1,4 +1,4 @@
-.todoList {
+.todo-list {
   border: 2px solid black;
   border-radius: 5px;
   width: 75%;
@@ -7,8 +7,12 @@
   align-items: center;
 }
 
-.todoList h1 {
+.todo-list h1 {
   text-align: center;
   font-family: "Times New Roman", Times, serif;
   color: black;
 }
+
+.footer {}
+
+.remove-all-done-btn {}
