@@ -13,12 +13,34 @@
   color: black;
 }
 
-/* .footer {
-} */
+.all, .active, .done, .toggle-all-btn{
+  background-color: gray;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 4px;
+  margin: 0px 2px;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+}
+
+.footer .todo-left {
+  margin-right: auto;
+}
+
+/* .all-active-done {} */
+
+.footer .toggle-all {
+  margin-left: auto;
+  text-align: right;
+}
 
 .delete-icon {
-  padding: 4px;
-  font-size: 1.4em;
+  padding-right: 4px;
+  font-size: 15px;
 }
 
 .remove-all-done-btn {
@@ -26,7 +48,7 @@
   border: none;
   border-radius: 4px;
   color: white;
-  padding: 8px;
+  padding: 4px;
   margin: 4px;
   font-size: default;
   cursor: pointer;

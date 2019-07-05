@@ -72,19 +72,34 @@ export default class TodoList extends Component {
             onDelete={() => this.handleDeleteTodo(todo.id)}
           />
         ))}
+
         <div className="footer">
-          <div>
+          <div className="todo-left">
             Todo Left: {this.state.todos.filter(todo => !todo.done).length}
           </div>
-          <div>
-            <button onClick={() => this.updateTodoToShow("all")}>All</button>
-            <button onClick={() => this.updateTodoToShow("active")}>
+          <div className="all-active-done">
+            <button
+              className="all"
+              onClick={() => this.updateTodoToShow("all")}
+            >
+              All
+            </button>
+            <button
+              className="active"
+              onClick={() => this.updateTodoToShow("active")}
+            >
               Active
             </button>
-            <button onClick={() => this.updateTodoToShow("done")}>Done</button>
-          </div>
-          <div>
             <button
+              className="done"
+              onClick={() => this.updateTodoToShow("done")}
+            >
+              Done
+            </button>
+          </div>
+          <div className="toggle-all">
+            <button
+              className="toggle-all-btn"
               onClick={() =>
                 this.setState(state => ({
                   todos: state.todos.map(todo => ({
