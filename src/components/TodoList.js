@@ -8,7 +8,8 @@ import {
   toggleDone,
   handleDeleteTodo,
   updateTodoToShow,
-  updateToggleAllDone
+  updateToggleAllDone,
+  removeAllDoneTodo
 } from "../actions/Actions";
 
 class TodoList extends Component {
@@ -119,6 +120,18 @@ class TodoList extends Component {
             </button>
           </div>
         </div>
+
+        {todos.some(todo => todo.done) ? (
+          <div>
+            <button
+              className="remove-all-done-btn"
+              onClick={() => this.props.removeAllDoneTodo()}
+            >
+              <i className="fa fa-trash delete-icon" />
+              Remove All Completed Todo
+            </button>
+          </div>
+        ) : null}
       </div>
     );
   }
@@ -209,7 +222,8 @@ const mapDispatchToProps = {
   toggleDone,
   handleDeleteTodo,
   updateTodoToShow,
-  updateToggleAllDone
+  updateToggleAllDone,
+  removeAllDoneTodo
 };
 
 function mapStateToProps(state) {

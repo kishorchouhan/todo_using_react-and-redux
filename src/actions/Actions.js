@@ -31,3 +31,9 @@ export const updateToggleAllDone = () => {
     type: "UPDATE_TOGGLE_ALL_DONE"
   };
 };
+
+export const removeAllDoneTodo = () => {
+  return {
+    type: "REMOVE_ALL_DONE_TODO"
+  };
+};

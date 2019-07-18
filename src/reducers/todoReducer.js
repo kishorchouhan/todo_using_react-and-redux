@@ -41,6 +41,11 @@ export const todoReducer = (
         })),
         toggleAllDone: !state.toggleAllDone
       };
+    case "REMOVE_ALL_DONE_TODO":
+      return {
+        ...state,
+        todos: state.todos.filter(todo => !todo.done)
+      };
     default:
       return state;
   }
