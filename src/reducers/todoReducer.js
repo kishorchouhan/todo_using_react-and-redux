@@ -1,4 +1,7 @@
-export const todoReducer = (state = { todos: [] }, action) => {
+export const todoReducer = (
+  state = { todos: [], todoToShow: "all" },
+  action
+) => {
   switch (action.type) {
     case "ADD_TODO":
       return {
@@ -23,6 +26,11 @@ export const todoReducer = (state = { todos: [] }, action) => {
       return {
         ...state,
         todos: state.todos.filter(todo => todo.id !== action.payload)
+      };
+    case "UPDATE_TODO_TO_SHOW":
+      return {
+        ...state,
+        todoToShow: action.payload
       };
     default:
       return state;

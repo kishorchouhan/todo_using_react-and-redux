@@ -18,3 +18,10 @@ export const handleDeleteTodo = id => {
     payload: id
   };
 };
+
+export const updateTodoToShow = input => {
+  return {
+    type: "UPDATE_TODO_TO_SHOW",
+    payload: input
+  };
+};

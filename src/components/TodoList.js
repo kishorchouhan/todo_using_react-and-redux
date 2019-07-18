@@ -3,7 +3,12 @@ import { connect } from "react-redux";
 import "./TodoList.css";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
-import { addTodo, toggleDone, handleDeleteTodo } from "../actions/Actions";
+import {
+  addTodo,
+  toggleDone,
+  handleDeleteTodo,
+  updateTodoToShow
+} from "../actions/Actions";
 
 class TodoList extends Component {
   // state = {
@@ -39,13 +44,13 @@ class TodoList extends Component {
   //     todos: state.todos.filter(todo => todo.id !== id)
   //   }));
   // };
-  //-----
 
   // updateTodoToShow = input => {
   //   this.setState({
   //     todoToShow: input
   //   });
   // };
+  //-----
 
   // removeAllDoneTodo = () => {
   //   this.setState(state => ({
@@ -54,13 +59,24 @@ class TodoList extends Component {
   // };
 
   render() {
-    const { todos } = this.props;
+    const { todos, todoToShow } = this.props;
     console.log("todos", this.props);
+    console.log("status", this.props.todoToShow);
+    let localTodo = [];
+
+    if (todoToShow === "all") {
+      localTodo = todos;
+    } else if (todoToShow === "active") {
+      localTodo = todos.filter(todo => !todo.done);
+    } else if (todoToShow === "done") {
+      localTodo = todos.filter(todo => todo.done);
+    }
+
     return (
       <div className="todo-list">
         <h1>TODOS</h1>
         <TodoForm onSubmit={todo => this.props.addTodo(todo)} />
-        {todos.map(todo => (
+        {localTodo.map(todo => (
           <Todo
             key={todo.id}
             toggleDone={() => this.props.toggleDone(todo.id)}
@@ -73,26 +89,26 @@ class TodoList extends Component {
           <div className="todo-left">
             Todo Left: {todos.filter(todo => !todo.done).length}
           </div>
-          {/* <div className="all-active-done">
+          <div className="all-active-done">
             <button
               className="all"
-              onClick={() => this.updateTodoToShow("all")}
+              onClick={() => this.props.updateTodoToShow("all")}
             >
               All
             </button>
             <button
               className="active"
-              onClick={() => this.updateTodoToShow("active")}
+              onClick={() => this.props.updateTodoToShow("active")}
             >
               Active
             </button>
             <button
               className="done"
-              onClick={() => this.updateTodoToShow("done")}
+              onClick={() => this.props.updateTodoToShow("done")}
             >
               Done
             </button>
-          </div> */}
+          </div>
           {/* <div className="toggle-all">
             <button
               className="toggle-all-btn"
@@ -178,6 +194,7 @@ class TodoList extends Component {
   //           </button>
   //         </div>
   //       </div>
+
   //       {this.state.todos.some(todo => todo.done) ? (
   //         <div>
   //           <button
@@ -197,12 +214,14 @@ class TodoList extends Component {
 const mapDispatchToProps = {
   addTodo,
   toggleDone,
-  handleDeleteTodo
+  handleDeleteTodo,
+  updateTodoToShow
 };
 
 function mapStateToProps(state) {
   return {
-    todos: state.todoReducer.todos
+    todos: state.todoReducer.todos,
+    todoToShow: state.todoReducer.todoToShow
   };
 }
 
