@@ -1,30 +1,32 @@
-# Todo web application using ReactJS
+# Todo web application using ReactJS and Redux
 
 ### Links to GitHub Repository (Master Branch)
 
-* My GitHub Project Repository: [https://github.com/kishorchouhan/Todo-App-Using-ReactJS](https://github.com/kishorchouhan/Todo-App-Using-ReactJS "My GitHub Project Repository")
+- My GitHub Project Repository: [https://github.com/kishorchouhan/todo_using_react-and-redux](https://github.com/kishorchouhan/todo_using_react-and-redux "My GitHub Project Repository")
 
-* My Project Website Is Hosted Here: [https://kishorchouhan.github.io/Todo-App-Using-ReactJS/](https://kishorchouhan.github.io/Todo-App-Using-ReactJS/ "My Hosted Website")
+- My Project Website Is Hosted Here: [https://kishorchouhan.github.io/todo_using_react-and-redux/](https://kishorchouhan.github.io/todo_using_react-and-redux/ "My Hosted Website")
 
 To run the website and take code on local machine:
 
 1. Download the GitHub zip file or clone the repository onto your local workstation:
-	* zip file [https://github.com/kishorchouhan/Todo-App-Using-ReactJS/archive/master.zip](https://github.com/kishorchouhan/Todo-App-Using-ReactJS/archive/master.zip "download zip file")
-	* git clone [https://github.com/kishorchouhan/Todo-App-Using-ReactJS.git/](https://github.com/kishorchouhan/Todo-App-Using-ReactJS.git "git clone repository")
+   - zip file [https://github.com/kishorchouhan/todo_using_react-and-redux/archive/master.zip](https://github.com/kishorchouhan/todo_using_react-and-redux/archive/master.zip "download zip file")
+   - git clone [https://github.com/kishorchouhan/todo_using_react-and-redux.git/](https://github.com/kishorchouhan/todo_using_react-and-redux.git "git clone repository")
 2. Open a browser window and navigate to the index.html file in your directory.
 
 ## Overview
 
-This is a simple Todo web application built with ReactJS.
+This is a simple Todo web application built with ReactJS and Redux.
 
-The point of this project is to help understanding some key ideas of React:
+The point of this project is to help understanding some key ideas of React and Redux:
 
-* Passing data through props
-* Lifting state up
-* Controlled component
-* Styling app using simple CSS
+- Passing data through props
+- Lifting state up
+- Controlled component
+- Styling app using simple CSS
+- using connect, reducers, actions in redux
 
 ## Todo in making this application:
+
 1. Add todo
 2. Display todo
 3. Cross off todo
@@ -32,17 +34,18 @@ The point of this project is to help understanding some key ideas of React:
 5. Filter All/Active/Complete
 6. Delete todo
 7. Delete all complete
-    - Only show if atleast one is complete
+   - Only show if at least one is complete
 8. Button to toggle all On/Off
 
 ## Features
-* Lets you add todo;
-* cross off the todo by clicking on todo if task is complete and vice-versa;
-* Can delete seperate todo by clicking on delete icon;
-* Allow user to filter All/Active/Complete todo;
-* Show no. of todo left;
-* Allow user to delete all complete todos;
-* Button available to toggle all complete or active;
+
+- Lets you add todo;
+- cross off the todo by clicking on todo if task is complete and vice-versa;
+- Can delete separate todo by clicking on delete icon;
+- Allow user to filter All/Active/Complete todo;
+- Show no. of todo left;
+- Allow user to delete all complete todos;
+- Button available to toggle all complete or active;
 
 ## Pre-written readme file by create react app:
 
