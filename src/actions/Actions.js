@@ -25,3 +25,9 @@ export const updateTodoToShow = input => {
     payload: input
   };
 };
+
+export const updateToggleAllDone = () => {
+  return {
+    type: "UPDATE_TOGGLE_ALL_DONE"
+  };
+};

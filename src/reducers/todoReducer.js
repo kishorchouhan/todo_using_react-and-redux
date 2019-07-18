@@ -1,5 +1,5 @@
 export const todoReducer = (
-  state = { todos: [], todoToShow: "all" },
+  state = { todos: [], todoToShow: "all", toggleAllDone: true },
   action
 ) => {
   switch (action.type) {
@@ -31,6 +31,15 @@ export const todoReducer = (
       return {
         ...state,
         todoToShow: action.payload
+      };
+    case "UPDATE_TOGGLE_ALL_DONE":
+      return {
+        ...state,
+        todos: state.todos.map(todo => ({
+          ...todo,
+          done: state.toggleAllDone
+        })),
+        toggleAllDone: !state.toggleAllDone
       };
     default:
       return state;

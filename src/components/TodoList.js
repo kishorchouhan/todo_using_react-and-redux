@@ -7,7 +7,8 @@ import {
   addTodo,
   toggleDone,
   handleDeleteTodo,
-  updateTodoToShow
+  updateTodoToShow,
+  updateToggleAllDone
 } from "../actions/Actions";
 
 class TodoList extends Component {
@@ -61,7 +62,7 @@ class TodoList extends Component {
   render() {
     const { todos, todoToShow } = this.props;
     console.log("todos", this.props);
-    console.log("status", this.props.todoToShow);
+    console.log("status", todoToShow);
     let localTodo = [];
 
     if (todoToShow === "all") {
@@ -109,22 +110,14 @@ class TodoList extends Component {
               Done
             </button>
           </div>
-          {/* <div className="toggle-all">
+          <div className="toggle-all">
             <button
               className="toggle-all-btn"
-              onClick={() =>
-                this.setState(state => ({
-                  todos: state.todos.map(todo => ({
-                    ...todo,
-                    done: state.toggleAllDone
-                  })),
-                  toggleAllDone: !state.toggleAllDone
-                }))
-              }
+              onClick={() => this.props.updateToggleAllDone()}
             >
-              Toggle All Done: {`${this.state.toggleAllDone}`}
+              Toggle All Done: {`${this.props.toggleAllDone}`}
             </button>
-          </div> */}
+          </div>
         </div>
       </div>
     );
@@ -215,13 +208,15 @@ const mapDispatchToProps = {
   addTodo,
   toggleDone,
   handleDeleteTodo,
-  updateTodoToShow
+  updateTodoToShow,
+  updateToggleAllDone
 };
 
 function mapStateToProps(state) {
   return {
     todos: state.todoReducer.todos,
-    todoToShow: state.todoReducer.todoToShow
+    todoToShow: state.todoReducer.todoToShow,
+    toggleAllDone: state.todoReducer.toggleAllDone
   };
 }
 
