@@ -32,18 +32,19 @@ class TodoList extends Component {
   //       }
   //     })
   //   }));
-  // };-----
-
-  // updateTodoToShow = input => {
-  //   this.setState({
-  //     todoToShow: input
-  //   });
   // };
 
   // handleDeleteTodo = id => {
   //   this.setState(state => ({
   //     todos: state.todos.filter(todo => todo.id !== id)
   //   }));
+  // };
+  //-----
+
+  // updateTodoToShow = input => {
+  //   this.setState({
+  //     todoToShow: input
+  //   });
   // };
 
   // removeAllDoneTodo = () => {
@@ -67,6 +68,48 @@ class TodoList extends Component {
             onDelete={() => this.props.handleDeleteTodo(todo.id)}
           />
         ))}
+
+        <div className="footer">
+          <div className="todo-left">
+            Todo Left: {todos.filter(todo => !todo.done).length}
+          </div>
+          {/* <div className="all-active-done">
+            <button
+              className="all"
+              onClick={() => this.updateTodoToShow("all")}
+            >
+              All
+            </button>
+            <button
+              className="active"
+              onClick={() => this.updateTodoToShow("active")}
+            >
+              Active
+            </button>
+            <button
+              className="done"
+              onClick={() => this.updateTodoToShow("done")}
+            >
+              Done
+            </button>
+          </div> */}
+          {/* <div className="toggle-all">
+            <button
+              className="toggle-all-btn"
+              onClick={() =>
+                this.setState(state => ({
+                  todos: state.todos.map(todo => ({
+                    ...todo,
+                    done: state.toggleAllDone
+                  })),
+                  toggleAllDone: !state.toggleAllDone
+                }))
+              }
+            >
+              Toggle All Done: {`${this.state.toggleAllDone}`}
+            </button>
+          </div> */}
+        </div>
       </div>
     );
   }
