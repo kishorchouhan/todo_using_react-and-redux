@@ -6,7 +6,7 @@ export const todoReducer = (
     case "ADD_TODO":
       return {
         ...state,
-        todos: [action.payload, ...state.todos]
+        todos: [...state.todos, action.payload]
       };
     case "TOGGLE_DONE":
       return {
